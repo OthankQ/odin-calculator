@@ -22,6 +22,16 @@ const divide = (...nums) => {
   })
 }
 
-const operate = (num1, num2, operator) => {
+const operate = (operator, num1, num2) => {
   return operator(num1, num2);
 }
+
+console.log(operate(multiply, 2, 5));
+
+module.exports = {
+  add, 
+  subtract, 
+  multiply, 
+  divide, 
+  operate
+};
