@@ -13,3 +13,7 @@ const multiply = (num1, num2) => {
 const divide = (num1, num2) => {
   return num1 / num2;
 }
+
+const operate = (num1, num2, operator) => {
+  return operator(num1, num2);
+}
