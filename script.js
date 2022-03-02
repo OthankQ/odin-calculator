@@ -1,19 +1,29 @@
-const add = (num1, num2) => {
-  return num1 + num2;
+const add = (...nums) => {
+  return nums.reduce((a,b) => {
+    return a + b;
+  }, 0)
 }
 
-const subtract = (num1, num2) => {
-  return num1 - num2;
+const subtract = (...nums) => {
+  return nums.reduce((a,b) => {
+    return a - b;
+  })
 }
 
-const multiply = (num1, num2) => {
-  return num1 * num2;
+const multiply = (...nums) => {
+  return nums.reduce((a,b) => {
+    return a * b;
+  })
 }
 
-const divide = (num1, num2) => {
-  return num1 / num2;
+const divide = (...nums) => {
+  return nums.reduce((a,b) => {
+    return a / b;
+  })
 }
 
 const operate = (num1, num2, operator) => {
   return operator(num1, num2);
 }
+
+console.log(divide(10,3));
