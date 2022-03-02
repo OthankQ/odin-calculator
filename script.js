@@ -25,5 +25,3 @@ const divide = (...nums) => {
 const operate = (num1, num2, operator) => {
   return operator(num1, num2);
 }
-
-console.log(divide(10,3));
