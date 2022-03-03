@@ -45,29 +45,46 @@ table {
 
 /* Container */
 
+body {
+	background: #a8bf7e;
+}
+
 .container {
-	padding: 10px;
+	padding: 15px;
 	gap: 15px;
-	border: 1px solid black;
 	margin: 10vh auto;
 	height: 80vh;
 	width: 80vh;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: repeat(5, 1fr);
+	background: #a0d0ea;
 }
 
 .display {
 	grid-column: 1/5;
-	border: 1px solid black;
+	background: #f2fceb;
 }
 
 .button {
 	border: none;
 	font-size: 25px;
-	filter: drop-shadow(0px 2px 1px);
+	box-shadow: 0px 3px grey;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #efefef;
 }
 
 .clicked {
-	filter:drop-shadow(0px 0px 0px);
+	box-shadow: none;
+	filter:brightness(80%);
+}
+
+.operator {
+	background: #efff93;
+}
+
+#clear {
+	background: #fd9fa9;
 }

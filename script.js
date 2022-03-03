@@ -26,14 +26,7 @@ const operate = (operator, num1, num2) => {
   return operator(num1, num2);
 }
 
-// module.exports = {
-//   add, 
-//   subtract, 
-//   multiply, 
-//   divide, 
-//   operate
-// };
-
+// Button click animation
 const buttons = document.querySelectorAll(".button");
 buttons.forEach((button) => {
   button.addEventListener('mousedown', (e) => {
