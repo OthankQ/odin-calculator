@@ -26,12 +26,20 @@ const operate = (operator, num1, num2) => {
   return operator(num1, num2);
 }
 
-console.log(operate(multiply, 2, 5));
+// module.exports = {
+//   add, 
+//   subtract, 
+//   multiply, 
+//   divide, 
+//   operate
+// };
 
-module.exports = {
-  add, 
-  subtract, 
-  multiply, 
-  divide, 
-  operate
-};
+const buttons = document.querySelectorAll(".button");
+buttons.forEach((button) => {
+  button.addEventListener('mousedown', (e) => {
+    e.target.classList.add('clicked');
+  })
+  button.addEventListener('mouseup', (e) => {
+    e.target.classList.remove('clicked');
+  })
+})
