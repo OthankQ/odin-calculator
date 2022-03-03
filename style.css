@@ -59,16 +59,22 @@ body {
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: repeat(5, 1fr);
 	background: #a0d0ea;
+	font-family: sans-serif;
 }
 
 .display {
 	grid-column: 1/5;
 	background: #f2fceb;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 15px;
+	font-size: 45px;
 }
 
 .button {
 	border: none;
-	font-size: 25px;
+	font-size: 35px;
 	box-shadow: 0px 3px grey;
 	display: flex;
 	justify-content: center;
