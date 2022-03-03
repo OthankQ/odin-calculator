@@ -46,7 +46,7 @@ const updateDisplay = (text) => {
 
 const clearDisplay = () => {
   displayContent = "0";
-  entireNumber = "";
+  enteredNumber = "";
   display.innerText = displayContent;
 }
 
