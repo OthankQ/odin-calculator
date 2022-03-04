@@ -32,9 +32,17 @@ const buttons = document.querySelectorAll(".button");
 const numberButtons = document.querySelectorAll(".number");
 const display = document.querySelector(".display");
 const clearButton = document.querySelector("#clear");
+const addButton = document.querySelector('#addition');
+const subtractButton = document.querySelector('#subtraction');
+const multiplyButton = document.querySelector('#multiplication');
+const divideButton = document.querySelector('#division');
+const equalButton = document.querySelector('#equals');
 
 let displayContent = "";
-let enteredNumber = "";
+let enteredNumber = ""; // Variable where the display number will be stored
+let operandA;
+let operandB;
+let currentOperation;
 
 const updateDisplay = (text) => {
   // Don't update the display directly, but update entered Number,
@@ -75,4 +83,36 @@ numberButtons.forEach((numberButton) => {
 // Clear display when C button is clicked
 clearButton.addEventListener('click', () => {
   clearDisplay();
+})
+
+// When an operator button is clicked, 
+// number currently on display will be stored in operandA variable
+// and the what kind of operation will be stored in whatOperation variable
+// enteredNumber will be reset to 0, but displayNumber will only be updated
+// when a new number is entered.
+// When the user enteres the second number and hits equals sign, 
+// The second number will be stored into operandB variable,
+// Operate function will be called with  
+
+// If another opertor is clicked instead of the equal button and there is already operand A, 
+// Result of the previous operation is stored in operandA
+
+addButton.addEventListener('click', () => {
+  if (operandA) {
+    operandA += enteredNumber;
+  }
+  operandA = Number(enteredNumber);
+  enteredNumber = "";
+  currentOperation = add;
+  console.log(operandA);
+  console.log(currentOperation);
+})
+
+equalButton.addEventListener('click', () => {
+  operandB = Number(enteredNumber);
+  console.log(operandB);
+  displayContent = operate(currentOperation, operandA, operandB);
+  console.log(displayContent);
+  display.innerText = displayContent;
+  operandA = Number(displayContent);
 })
