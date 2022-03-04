@@ -98,21 +98,39 @@ clearButton.addEventListener('click', () => {
 // Result of the previous operation is stored in operandA
 
 addButton.addEventListener('click', () => {
-  if (operandA) {
-    operandA += enteredNumber;
-  }
   operandA = Number(enteredNumber);
   enteredNumber = "";
   currentOperation = add;
-  console.log(operandA);
-  console.log(currentOperation);
+})
+
+subtractButton.addEventListener('click', () => {
+  operandA = Number(enteredNumber);
+  enteredNumber = "";
+  currentOperation = subtract;
+})
+
+multiplyButton.addEventListener('click', () => {
+  operandA = Number(enteredNumber);
+  enteredNumber = "";
+  currentOperation = multiply;
+})
+
+divideButton.addEventListener('click', () => {
+  operandA = Number(enteredNumber);
+  enteredNumber = "";
+  currentOperation = divide;
 })
 
 equalButton.addEventListener('click', () => {
   operandB = Number(enteredNumber);
-  console.log(operandB);
+  if (currentOperation === divide && operandB === 0) {
+    alert("Cannot divide by 0. Try again.");
+    currentOperation = null;
+    operandA = null;
+    operandB = null;
+    return;
+  }
   displayContent = operate(currentOperation, operandA, operandB);
-  console.log(displayContent);
   display.innerText = displayContent;
-  operandA = Number(displayContent);
+  enteredNumber = "";
 })
