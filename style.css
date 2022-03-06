@@ -53,13 +53,14 @@ body {
 	padding: 15px;
 	gap: 15px;
 	margin: 10vh auto;
-	height: 80vh;
-	width: 80vh;
+	height: 70vh;
+	width: 50vh;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: repeat(5, 1fr);
 	background: #a0d0ea;
 	font-family: sans-serif;
+	border-radius: 10px;
 }
 
 .display {
@@ -67,9 +68,12 @@ body {
 	background: #f2fceb;
 	display: flex;
 	justify-content: flex-end;
+	flex-wrap: wrap;
 	align-items: center;
+	height: auto;
 	padding: 15px;
 	font-size: 45px;
+	border-radius: 10px;
 }
 
 .button {
@@ -80,6 +84,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	background: #efefef;
+	border-radius: 10px;
 }
 
 .clicked {

@@ -71,6 +71,7 @@ const evaluateSoFar = (operator) => {
     if (currentOperation == divide && displayValue == 0) {
       reset();
       alert("Cannot divide by 0");
+      return;
     }
     result = operate(operator, result, Number(displayValue));
   }
@@ -97,26 +98,47 @@ numberButtons.forEach(numberButton => {
 
 // Operator button click behavior
 addButton.addEventListener('click', (e) => {
-  console.log(e);
+  if (!currentOperation) {
+    currentOperation = add;
+  }
   evalAndSetCurrentOperation(add);
 })
 
 subtractButton.addEventListener('click', (e) => {
+  if (!currentOperation) {
+    currentOperation = subtract;
+  }
   evalAndSetCurrentOperation(subtract);
 })
 
 multiplyButton.addEventListener('click', (e) => {
+  if (!displayValue) {
+    displayValue = "1";
+  }
+  if (!currentOperation) {
+    currentOperation = multiply;
+  }
   evalAndSetCurrentOperation(multiply);
 })
 
 divideButton.addEventListener('click', (e) => {
+  if (!displayValue) {
+    displayValue = "1";
+  }
+  if (!currentOperation) {
+    currentOperation = divide;
+  }
   evalAndSetCurrentOperation(divide);
 })
 
 equalButton.addEventListener('click', (e) => {
+  if (!currentOperation) {
+    return;
+  }
   evaluateSoFar(currentOperation);
-  console.log(result);
-  displayValue = null;
+  currentOperation = null;
+  operatorButtonClicked = false;
+  displayValue = "";
 })
 
 clearButton.addEventListener('click', (e) => {
